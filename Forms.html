@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Page</title>
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <section>
+        <header>
+            <h1 class="text-center">Forms Page</h1>
+        </header>
+
+        <!-- Task 1   -->
+         <!-- Also Form Field Validation Section -->
+        <section class="container my-5">
+            <div class="">
+                <form class="needs-validation" novalidate>
+                    <div class="row row-cols-2">
+                        
+                        <div class="col-12 col-lg-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" id="inputNameForm1" class="form-control" placeholder="Enter Your Full Name" required>
+                                <label for="inputNameForm1">Fullname</label>
+                                
+                                <div class="valid-feedback">
+                                    Looks Great!
+                                    
+                                </div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <label for="inputEmailform1" class="form-label">Email</label>
+                                <input type="email" id="inputEmailform1" class="form-control" placeholder="Enter Email Address:" required>
+                                <div class="valid-feedback">
+                                    Looks Great!
+
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+
+                       
+                        <div class="col-12 col-lg-6">
+                            <div class="form-floating mb-3">
+                                <label for="inputPassword5" class="form-label">Password</label>
+                                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" required>
+                                <div class="valid-feedback">
+                                    Looks Great!
+
+                                </div>
+                                <div class="invalid-feedback">
+                                    password is incorrect length
+
+                                </div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <label for="inputConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+                                <div class="valid-feedback">
+                                    Looks Great!
+
+                                </div>
+                                <div class="invalid-feedback">
+                                    password does not match
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </section>
+
+   <!-- Task 2 -->
+   <section class="container my-5">
+    <div class="d-flex align-items-center gap-3">
+        <form class="d-flex align-items-center gap-3 w-100">
+            
+            <div class="mb-3">
+                <label for="inputName" class="form-label">Fullname</label>
+                <input type="text" id="inputName" class="form-control" placeholder="Enter Your Full Name">
+            </div>
+            
+            <div class="mb-3">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Enter Email Address">
+            </div>
+            
+            <div class="mb-3">
+                <label for="inputPassword5" class="form-label">Password</label>
+                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+            </div>
+            
+            <div class="mb-3">
+                <label for="inputConfirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password">
+            </div>
+            
+            <div class="align-self-end mb-3">
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+</section>
+
+
+</section>
+
+
+    <!--Task 3  -->
+    <section class="container my-5">
+        <div class="">
+            <form>
+                <div class="row">
+                    
+                    <div class="col-12 col-lg-6">
+                        <div class="mb-3">
+                            <label for="inputName" class="form-label">Fullname</label>
+                            <input type="text" id="inputName" class="form-control" placeholder="Enter Your Full Name:">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Enter Email Address:">
+                        </div>
+                        
+                    </div>
+
+                   
+                    <div>
+                        <div class="mb-3">
+                            <label for="inputPassword5" class="form-label">Password</label>
+                            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                            <div id="passwordHelpBlock" class="form-text">
+                                 Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputConfirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password">
+                        </div>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const forms = document.querySelectorAll('.needs-validation');
+
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                form.classList.add('was-validated');
+            }, false);
+        });
+
+        // Additional password validation
+        document.getElementById('inputPassword5').addEventListener('input', function () {
+            const password = this.value;
+            const isValid = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,20}$/.test(password);
+
+            if (!isValid) {
+                this.setCustomValidity("Password must be 8-20 characters long and include letters and numbers.");
+            } else {
+                this.setCustomValidity("");
+            }
+        });
+    });
+</script>
